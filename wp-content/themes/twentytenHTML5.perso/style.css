@@ -102,7 +102,15 @@ footer {
 }
 
 
-.cat-links,.meta-sep{
+#access ul li.current_page_item > a, 
+#access ul li.current-menu-ancestor > a, 
+#access ul li.current-menu-item > a,
+ #access ul li.current-menu-parent > a
+ {
+	background-color: #0088CC;
+    color: #FFFFFF;
+ }
+.cat-links,.meta-sep, .page-title{
 	visibility:hidden;
 }
 .comments-link  a{
