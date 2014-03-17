@@ -29,7 +29,7 @@
 <p style="float: right;">
 	Propulsé par WordPress
 	<a href="http://www.wordpress.fr/">
-		<img align="absmiddle" alt="WordPress" border="0" height="40"  src="/images/wordpress.jpg" width="40" />
+		<img align="absmiddle" alt="WordPress" border="0" height="30"  src="/images/wordpress.jpg" width="30" />
 	</a></p>
 	</footer><!-- #footer -->
 

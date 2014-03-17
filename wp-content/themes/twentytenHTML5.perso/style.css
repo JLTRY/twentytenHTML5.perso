@@ -11,13 +11,40 @@ Template: twentytenHTML5
 
 
 @import url("../twentytenHTML5/style.css");
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video 
+{
+	font-size:13px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif!important;
+}
 body {
 	padding: 20px;
 	background: #fafafa url('/images/headbg.jpg') top left no-repeat fixed !important;
+	
+    
+    line-height: 18px;
+}
+
+strong { 
+	font-weight: bold; 
 }
 
 footer {
 	margin-bottom:0px;
+}
+
+.meta-nav{
+	visibility:hidden;
 }
 
 #container {
@@ -68,10 +95,22 @@ footer {
 	display:block;
 	text-decoration:none;
 	color: #0088CC;
-	padding:0 10px;
+	padding:8px 10px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 13px;
-	line-height: 26px;
+	line-height: 14px;
+}
+
+
+.cat-links,.meta-sep{
+	visibility:hidden;
+}
+.comments-link  a{
+	background-image: url("/images/comment.png") !important;
+    background-position: 0 center, 0 center !important;
+    background-repeat: no-repeat;
+	margin-bottom: 10px !important;
+    padding: 12px 8px 20px 50px !important;
 }
 
 header {
@@ -87,7 +126,7 @@ header {
 }
 
 #colophon {
-	border-top: 1px solid #AAAAAA;
+	border-top: none;
 	margin-top:0;
 	padding: 18px 0;
 	overflow: hidden;
@@ -100,6 +139,21 @@ header {
     margin-bottom: 2px!important;    
 }
 
+article{
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+
+h2, h3 {
+    border-bottom: 1px solid #DDDDDD !important;
+}
+p.blubox-jck
+{
+	margin-right:20px !important;
+}
 
 .row-fluid {
 	width: 100%!important;
