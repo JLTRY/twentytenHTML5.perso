@@ -12,25 +12,33 @@
 ?>
 	</div><!-- #main -->
 </div><!-- #wrapper -->
+</div>
 	<footer role="contentinfo">
-		<div id="colophon">
-
-<?php
-	/* A sidebar in the footer? Yep. You can can customize
-	 * your footer with four columns of widgets.
-	 */
-	get_sidebar( 'footer' );
-?>
-<p style="float: left;">
-	<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"> 
-		<img align="absmiddle" alt="Creative Commons attribution non commercial partage à l'identique" id="cc-by-nc" src="/images/cc-by-nc-sa.png" style="width: 88px; height: 31px; " />
-	</a> 
-	© 2011-2014 Site de JL TRYOEN</p>
-<p style="float: right;">
-	Propulsé par WordPress
-	<a href="http://www.wordpress.fr/">
-		<img align="absmiddle" alt="WordPress" border="0" height="30"  src="/images/wordpress.jpg" width="30" />
-	</a></p>
+		<div class="container">
+			<?php
+				/* A sidebar in the footer? Yep. You can can customize
+				 * your footer with four columns of widgets.
+				 */
+				get_sidebar( 'footer' );
+			?>
+			<hr>
+			<div class="row">
+				<div class="span6" style="float: left;">
+					<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"> 
+						<img align="absmiddle" alt="Creative Commons attribution non commercial partage à l'identique" id="cc-by-nc" src="/images/cc-by-nc-sa.png" style="width: 88px; height: 31px; " />
+					</a>© 2011-2014 Site de JL TRYOEN
+				</div>	
+				<div class="span6" style="float: right;">
+					<p  style="float: right;">
+					Propulsé par WordPress
+					<a href="http://www.wordpress.fr/">
+						<img align="absmiddle" alt="WordPress" border="0" height="30"  src="/images/wordpress.jpg" width="30" />
+					</a>
+					</p>
+				</div>
+			</div>	
+		</div><!-- container -->
+	
 	</footer><!-- #footer -->
 
 

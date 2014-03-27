@@ -33,6 +33,7 @@
 		}
 	?>
 	</title>
+	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri()  . "/favicon.ico" ;?> ">
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
     <!--[if lte IE 9]>
@@ -72,7 +73,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="wrapper" class="hfeed">
+<div class="body">
+<div class="container">
 	<header>
 		<div id="masthead">
 			<div id="branding" role="banner">
@@ -91,7 +93,7 @@
 					<?php endif; ?>
 			</div><!-- #branding -->
 
-			<div id="access" role="navigation">
+			<nav class="navigation" role="navigation">
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
@@ -106,7 +108,7 @@
 					  'walker' => new wp_bootstrap_navwalker())
 					);
 				?>				
-			</div><!-- #access -->
+			</nav><!-- #nav -->
 		</div><!-- #masthead -->
 	</header>
 

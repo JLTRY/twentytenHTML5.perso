@@ -19,9 +19,12 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	 * @param string $output Passed by reference. Used to append additional content.
 	 * @param int $depth Depth of page. Used for padding.
 	 */
-	public function start_lvl( &$output, $depth = 0, $args = array() ) {
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {		
 		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
+		/*if ($dept == 0)
+			$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
+		else*/	
+			$output .= "\n$indent<ul class=\" nav-child unstyled small\">\n";
 	}
 
 	/**
@@ -63,7 +66,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
 			if ( $args->has_children )
-				$class_names .= ' dropdown';
+				$class_names .= ' dropdown deeper parent';
 
 			if ( in_array( 'current-menu-item', $classes ) )
 				$class_names .= ' active';

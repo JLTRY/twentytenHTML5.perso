@@ -22,7 +22,7 @@ function improved_trim_excerpt($text) {
                 $text = str_replace('\]\]\>', ']]&gt;', $text);
                 $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
                 $text = strip_tags($text, '<p><b>');
-                $excerpt_length = 25;
+                $excerpt_length = 50;
                 $words = explode(' ', $text, $excerpt_length + 1);
                 if (count($words)> $excerpt_length) {
                         array_pop($words);
@@ -38,7 +38,7 @@ remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'improved_trim_excerpt');
 
 
-
+//ajouter une icone pour "lire la suite"
 function mytwentyten_custom_excerpt_more( $output ) {
 	return $output . ' <a href="'. get_permalink() . '">' .'<img src="/images/LOGO-Cercle-Fleche2.png">' . 
 					 '</a>';
@@ -48,16 +48,18 @@ add_filter( 'get_the_excerpt', 'mytwentyten_custom_excerpt_more' );
 
 
 function wpt_register_js() {
-		wp_register_script('jquery.bootstrap.min',  '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', 'jquery');
-		wp_enqueue_script('jquery.bootstrap.min');
+		wp_register_script('jquery',  '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
+		wp_enqueue_script('jquery');	
+		wp_register_script('bootstrap', '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js', 'jquery');		
+		wp_enqueue_script('bootstrap');			
 }
 add_action( 'init', 'wpt_register_js' );
 function wpt_register_css() {
-	wp_register_style( 'bootstrap.min',  '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css' );		
-	wp_register_style( 'twentyten', get_stylesheet_uri(), array( 'bootstrap.min' ));
 	wp_register_style( 'typography', 'http://www.jltryoen.fr/joomla_3.0/plugins/editors/jckeditor/typography/typography.min.css');
-	wp_enqueue_style( 'bootstrap.min' );
 	wp_enqueue_style( 'typography' );
+	wp_register_style( 'css3treeview', 'http://www.jltryoen.fr/weave/favorites/css/css3treeview.css');
+	wp_enqueue_style( 'css3treeview' );
+	
 }
 add_action( 'wp_enqueue_scripts', 'wpt_register_css' );
 
@@ -69,5 +71,12 @@ register_default_headers( array(
 			'description' => __( 'Montagne', 'twentyten' )
 		)	
 	)	
-);		
+);	
+
+/* Create shortcode to list subpages. */
+function list_subpages() {
+    return '<ul class="nav nav-tabs nav-stacked">'.wp_list_pages('echo=0&depth=0&title_li=&child_of='.get_the_id()).'</ul>';
+}
+
+add_shortcode('subpages', 'list_subpages');	
 ?>
