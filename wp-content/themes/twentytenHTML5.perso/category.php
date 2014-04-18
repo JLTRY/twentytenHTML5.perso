@@ -10,14 +10,14 @@
 
 <?php get_header(); ?>
 
-		<div id="container">
+		<div class="span9">
 			<section id="content" role="main">
 
-				<header>
+				<!--<header>
                     <h1 class="page-title"><?php
 						printf( __( 'Category Archives: %s', 'twentyten' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 					?></h1>
-                </header>
+                </header>-->
 				<?php
 					$category_description = category_description();
 					if ( ! empty( $category_description ) )
@@ -30,8 +30,8 @@
 				get_template_part( 'loop', 'category' );
 				?>
 
-			</section><!-- #content -->
-		</div><!-- #container -->
+			</section><!-- #section -->
+		</div><!-- #span9 -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

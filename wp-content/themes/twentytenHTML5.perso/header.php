@@ -35,7 +35,7 @@
 	</title>
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri()  . "/favicon.ico" ;?> ">
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	
     <!--[if lte IE 9]>
     	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -54,7 +54,9 @@
 	 */
 
 	wp_head();
+
 ?>
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];

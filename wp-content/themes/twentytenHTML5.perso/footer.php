@@ -30,7 +30,7 @@
 				</div>	
 				<div class="span6" style="float: right;">
 					<p  style="float: right;">
-					Propulsé par WordPress
+					<a href="a-propos" target="_self" title="À propos du site de JL TRYOEN">À propos</a> | <a href="plan-du-site" target="_self" title="Plan du site">Plan</a> | <a href="contact" target="_self" title="Me contacter par mail">Contact</a>
 					<a href="http://www.wordpress.fr/">
 						<img align="absmiddle" alt="WordPress" border="0" height="30"  src="/images/wordpress.jpg" width="30" />
 					</a>

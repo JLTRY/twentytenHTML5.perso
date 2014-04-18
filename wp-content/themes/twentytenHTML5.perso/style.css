@@ -10,9 +10,9 @@ Template: twentytenHTML5
 
 
 
-@import url("../twentytenHTML5/style.css");
-@import url("../../../../joomla_3.0/templates/protostar/css/template.min.css");
-@import url("../../../../joomla_3.0/templates/protostar/css/templatemod.css");
+//@import url("../twentytenHTML5/style.css");
+//@import url("../../../../joomla_3.0/templates/protostar/css/template.min.css");
+//@import url("../../../../joomla_3.0/templates/protostar/css/templatemod.css");
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -215,6 +215,10 @@ div#calendar_wrap,div.wp-forecast{
     border-radius: 10px;  
 	padding:5px;
 }
+
+div.wpff_nav {
+	display:none;
+}	
 
 
 /*other medias*/
