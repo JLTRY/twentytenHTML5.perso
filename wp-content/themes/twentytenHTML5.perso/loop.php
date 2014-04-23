@@ -62,7 +62,7 @@
 	<?php if ( in_category( _x('gallery', 'gallery category slug', 'twentyten') ) ) : ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<header>
-                <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+                <h2 ><?php the_title(); ?></h2>
             </header>
 
 			<div class="entry-meta">
@@ -123,7 +123,7 @@
 	<?php else : ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<header>
-                <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+                <h2 ><?php the_title(); ?></h2>
             </header>
 
 			<div class="entry-meta">
