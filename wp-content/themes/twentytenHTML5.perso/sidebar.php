@@ -16,5 +16,5 @@
 	}
 	appendToIncludePath("../twentytenHTML5");		
 	include "sidebar.php";
-	?>		
+	?>			
 </div>

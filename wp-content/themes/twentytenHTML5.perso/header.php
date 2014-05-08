@@ -8,6 +8,8 @@
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */
+// Register custom navigation walker
+require_once('wp_bootstrap_navwalker.php'); 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -31,7 +33,9 @@
 		} else { // Otherwise:
 			wp_title( '' ); echo ' | '; bloginfo( 'name' ); twentyten_the_page_number();
 		}
+		
 	?>
+	
 	</title>
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri()  . "/favicon.ico" ;?> ">
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -57,21 +61,6 @@
 
 ?>
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["trackPageView"]);
-  _paq.push(["enableLinkTracking"]);
-
-  (function() {
-    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://www.jltryoen.fr/piwik/";
-    _paq.push(["setTrackerUrl", u+"piwik.php"]);
-    _paq.push(["setSiteId", "1"]);
-    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
-    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Piwik Code -->
 </head>
 
 <body <?php body_class(); ?>>
@@ -80,7 +69,7 @@
 	<header>
 		<div id="masthead">
 			<div id="branding" role="banner">
-				
+				<div class="header-inner clearfix">
 				<?php
 					// Check if this is a post or page, if it has a thumbnail, and if it's a big one
 					if ( is_singular() &&
@@ -91,8 +80,26 @@
 						echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
 					else : 						?>
 						<!--<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />-->
-						<img src="<?php header_image(); ?>" alt="perso" />
+						<a class="brand pull-left" href="">
+							<img src="<?php header_image(); ?>" alt="perso" />
+						</a>
 					<?php endif; ?>
+					
+					<div class="header-search pull-right">
+						<ul class="nav menu btn">
+						<li class="item-695">
+						<?php
+							if ( is_user_logged_in() ) {
+									echo '<a href="'.wp_logout_url(home_url()).'" title="Logout">Deconnexion</a>';
+								} else {
+									echo '<a href="/wordpress/login">Connexion</a>';
+							}
+						?>
+						
+						</li>
+						</ul>
+					</div>
+				</div>	
 			</div><!-- #branding -->
 
 			<nav class="navigation" role="navigation">

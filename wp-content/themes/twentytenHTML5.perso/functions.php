@@ -1,6 +1,5 @@
 <?php
-// Register custom navigation walker
-require_once('wp_bootstrap_navwalker.php');
+
 
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -39,27 +38,13 @@ function my_has_excerpt()
 
 
 function excerpt_read_more_link($output) {
-	global $post;
-	//$post = get_post();		
 	if ( my_has_excerpt())
 		return improved_trim_excerpt('') . '<a class="suite-link" href="'.  get_permalink() . '">'  . 
 					  "Lire la suite" .'</a>';
 	else
-		return improved_trim_excerpt('');//apply_filters('the_content', get_the_content(''));	
+		return improved_trim_excerpt('');
 }
 
-
-
-function wpse_wpautop_nobr( $content ) {
-    return wpautop( $content, false );
-}
-
-
-function my_minify_url($url)
-{
-	echo $url;
-	return $url+ "&w=ici";
-}
 
 function my_child_theme_setup() {
      // excerpt
@@ -68,13 +53,7 @@ function my_child_theme_setup() {
 	add_filter('get_the_excerpt', 'improved_trim_excerpt');
 	remove_filter( 'get_the_excerpt', 'twentyten_custom_excerpt_more' );	
 	add_filter('get_the_excerpt', 'excerpt_read_more_link');
-	// pour éviter que wordpress ajoute des <br>
-	/*remove_filter( 'the_content', 'wpautop' );
-	remove_filter( 'the_excerpt', 'wpautop' );	
-	add_filter( 'the_content', 'wpse_wpautop_nobr' );
-	add_filter( 'the_excerpt', 'wpse_wpautop_nobr' );*/
-	add_filter( 'the_content', 'shortcode_unautop' );
-	//add_filter('wp_minify_css_url', 'my_minify_url');
+	add_filter( 'the_content', 'shortcode_unautop' );	
  }
 
 
@@ -98,13 +77,10 @@ function wpt_register_css() {
 	 
 	// Enqueue the parent stylesheet
 	wp_enqueue_style( 'theme-name-parent-style', get_template_directory_uri() . '/style.css', array(), $parent['Version'], 'all' );
-	
-	
 	wp_register_style( 'typography', 'http://www.jltryoen.fr/min/?g=typography'); //'http://www.jltryoen.fr/joomla_3.0/plugins/editors/jckeditor/typography/typography.min.css');
 	wp_enqueue_style( 'typography' );
 	wp_register_style( 'css3treeview', 'http://www.jltryoen.fr/weave/favorites/css/css3treeview.css');
 	wp_enqueue_style( 'css3treeview' );
-	
 	wp_register_style( 'joomla', 'http://www.jltryoen.fr/min/?g=joomla');
 	wp_enqueue_style( 'joomla' );
 	
