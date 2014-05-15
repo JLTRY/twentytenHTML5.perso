@@ -53,6 +53,12 @@ h1, h2, h3 {
 }
 
 
+
+.entry-title {
+    clear: none;
+    float: none;
+}
+
 .entry-title a:link, .entry-title a:visited {
     color: #005580;
     text-decoration: none;
