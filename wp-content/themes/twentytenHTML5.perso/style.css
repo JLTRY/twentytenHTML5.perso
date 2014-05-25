@@ -86,7 +86,7 @@ h1, h2, h3 {
 }
 #branding {
 	padding-left:0px;
-	padding-bottom:20px;
+	padding-bottom:10px;
 }	
 
 /* This is the custom header image */
@@ -239,40 +239,7 @@ ul.xoxo {
 ul.xoxo >div {
  display: inline-block;
  }
-
-/*other medias*/
-@media (min-width: 768px) and (max-width: 979px) {
-	#access .menu-header,
-	div.menu,
-	#colophon,
-	#main,
-	#wrapper {
-		width: 724px;
-	}
-	#branding,
-	{
-		width: 714px;
-	}
-	
-}
-
-
-@media (max-width: 767px) and (min-width=481px){
-	#access .menu-header,	
-	#colophon,	
-	#main,
-	#wrapper {
-		width: 748px;
-	}
-
-	#branding,
-	{
-		width: 714px;
-	}
-
-}
-
-
+ 
 
 @media (max-width: 481px) {
 	body{
@@ -305,7 +272,7 @@ ul.xoxo >div {
 
 	#branding
 	{	
-		width: 95%;
+		width: 95% !important;
 		padding:2px;		
 	}
 	#branding img{
@@ -313,3 +280,40 @@ ul.xoxo >div {
 		margin: 2px;
 	}
 }	
+
+
+@media (max-width: 767px) and (min-width: 481px){
+	#access .menu-header,	
+	#colophon,	
+	#main,
+	#wrapper {
+		width: 748px;
+	}
+
+	#branding
+	{
+		width: 714px;
+	}
+
+}
+
+ 
+
+/*other medias*/
+@media (min-width: 768px) and (max-width: 979px) {
+	#access .menu-header,
+	div.menu,
+	#colophon,
+	#main,
+	#wrapper {
+		width: 724px;
+	}
+	#branding,
+	{
+		width: 714px;
+	}
+	
+}
+
+
+

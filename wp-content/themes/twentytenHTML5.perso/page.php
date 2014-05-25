@@ -11,10 +11,11 @@
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */
+require_once('horzsidebar.php');  
 ?>
 
 <?php get_header(); ?>
-
+		<div class="row-fluid">
 		<div class="span9">
 			<section id="content" role="main" >
 
@@ -43,4 +44,6 @@
 		</div><!-- #span9 -->
 
 <?php get_sidebar(); ?>
+</div> 
+<?php get_horzsidebar();?>
 <?php get_footer(); ?>

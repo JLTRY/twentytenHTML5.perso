@@ -54,6 +54,32 @@ function my_child_theme_setup() {
 	remove_filter( 'get_the_excerpt', 'twentyten_custom_excerpt_more' );	
 	add_filter('get_the_excerpt', 'excerpt_read_more_link');
 	add_filter( 'the_content', 'shortcode_unautop' );	
+	// 
+}
+add_action( 'widgets_init', 'my_child_theme_widgets_init' );
+
+function my_child_theme_widgets_init() {	
+	register_sidebar( array(
+		'name' => __( 'Horizontal Widget Area 1', 'twentyten' ),
+		'id' => 'horizontal-1',
+		'description' => __( 'The 1st horz widget area', 'twentyten' ),	
+		'before_widget' => '<!-- horz -->',
+		'after_widget' => '<!-- -->',		
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>'
+		)
+	);
+	register_sidebar( array(
+		'name' => __( 'Horizontal Widget Area 2', 'twentyten' ),
+		'id' => 'horizontal-2',
+		'description' => __( 'The 2nd horizontal widget area', 'twentyten' ),	
+		'before_widget' => '<!-- horz -->',
+		'after_widget' => '<!-- -->',		
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>'
+		)	
+	);
+
  }
 
 
@@ -77,12 +103,14 @@ function wpt_register_css() {
 	 
 	// Enqueue the parent stylesheet
 	wp_enqueue_style( 'theme-name-parent-style', get_template_directory_uri() . '/style.css', array(), $parent['Version'], 'all' );
-	wp_register_style( 'typography', 'http://www.jltryoen.fr/min/?g=typography'); //'http://www.jltryoen.fr/joomla_3.0/plugins/editors/jckeditor/typography/typography.min.css');
-	wp_enqueue_style( 'typography' );
+	//wp_register_style( 'typography', 'http://www.jltryoen.fr/min/?g=typography'); //'http://www.jltryoen.fr/joomla_3.0/plugins/editors/jckeditor/typography/typography.min.css');
+	//wp_enqueue_style( 'typography' );
 	wp_register_style( 'css3treeview', 'http://www.jltryoen.fr/weave/favorites/css/css3treeview.css');
 	wp_enqueue_style( 'css3treeview' );
 	wp_register_style( 'joomla', 'http://www.jltryoen.fr/min/?g=joomla');
 	wp_enqueue_style( 'joomla' );
+	wp_register_style( 'my_child_theme', get_stylesheet_uri(), array( 'theme-name-parent-style' ));
+    wp_enqueue_style( 'my_child_theme' );
 	
 }
 add_action( 'wp_enqueue_scripts', 'wpt_register_css' );
@@ -90,7 +118,7 @@ add_action( 'wp_enqueue_scripts', 'wpt_register_css' );
 
 register_default_headers( array(
 		'montagne' => array(
-			'url' => 'http://jean-luc.tryoen.pagesperso-orange.fr/Mes%%20Images/montagne3.jpg',
+			'url' => 'http://images.jltryoen.fr/Images/montagne3.jpg',
 			'thumbnail_url' => '%s/images/headers/montagne3-thumbnail.jpg',
 			/* translators: header image description */
 			'description' => __( 'Montagne', 'twentyten' )
