@@ -10,7 +10,7 @@ Template: twentytenHTML5
 
 
 
-//@import url("../twentytenHTML5/style.css");
+@import url("../twentytenHTML5/style.css");
 //@import url("../../../../joomla_3.0/templates/protostar/css/template.min.css");
 //@import url("../../../../joomla_3.0/templates/protostar/css/templatemod.css");
 html, body, div, span, object, iframe,
@@ -95,7 +95,7 @@ h1, h2, h3 {
 	border-top: none;
 	display: block;
 	border-bottom: none;
-    box-shadow: 4px 4px 2px #888888;
+    box-shadow: 4px 4px 2px #888888;	
 }
 
 #wrapper {
@@ -241,7 +241,7 @@ ul.xoxo >div {
  }
  
 
-@media (max-width: 481px) {
+@media (max-width: 480px) {
 	body{
 		padding:4px !important;		
 	}
@@ -272,17 +272,18 @@ ul.xoxo >div {
 
 	#branding
 	{	
-		width: 95% !important;
+		width: 99% !important;
 		padding:2px;		
 	}
 	#branding img{
 		padding :0px;
-		margin: 2px;
+		margin-bottom: 2px;
+		width: 98% !important;
 	}
 }	
 
 
-@media (max-width: 767px) and (min-width: 481px){
+@media (min-width: 481px) and (max-width: 768px){
 	#access .menu-header,	
 	#colophon,	
 	#main,
@@ -300,7 +301,7 @@ ul.xoxo >div {
  
 
 /*other medias*/
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 769px) and (max-width: 980px) {
 	#access .menu-header,
 	div.menu,
 	#colophon,
@@ -308,7 +309,7 @@ ul.xoxo >div {
 	#wrapper {
 		width: 724px;
 	}
-	#branding,
+	#branding
 	{
 		width: 714px;
 	}

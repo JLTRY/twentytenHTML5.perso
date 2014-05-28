@@ -102,15 +102,14 @@ function wpt_register_css() {
 	$parent = wp_get_theme( $parent );
 	 
 	// Enqueue the parent stylesheet
-	wp_enqueue_style( 'theme-name-parent-style', get_template_directory_uri() . '/style.css', array(), $parent['Version'], 'all' );
+	//wp_enqueue_style( 'theme-name-parent-style', get_template_directory_uri() . '/style.css', array(), $parent['Version'], 'all' );
 	//wp_register_style( 'typography', 'http://www.jltryoen.fr/min/?g=typography'); //'http://www.jltryoen.fr/joomla_3.0/plugins/editors/jckeditor/typography/typography.min.css');
 	//wp_enqueue_style( 'typography' );
 	wp_register_style( 'css3treeview', 'http://www.jltryoen.fr/weave/favorites/css/css3treeview.css');
 	wp_enqueue_style( 'css3treeview' );
 	wp_register_style( 'joomla', 'http://www.jltryoen.fr/min/?g=joomla');
 	wp_enqueue_style( 'joomla' );
-	wp_register_style( 'my_child_theme', get_stylesheet_uri(), array( 'theme-name-parent-style' ));
-    wp_enqueue_style( 'my_child_theme' );
+	
 	
 }
 add_action( 'wp_enqueue_scripts', 'wpt_register_css' );
