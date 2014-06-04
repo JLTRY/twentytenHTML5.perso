@@ -63,7 +63,9 @@ h1, h2, h3 {
     color: #005580;
     text-decoration: none;
 }
-
+.entry-content input {
+    margin: 0 0 2px;
+}
 .meta-nav, .screen-reader-text{
 	visibility:hidden;
 	line-height: 0px;
