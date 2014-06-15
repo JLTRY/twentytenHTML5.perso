@@ -20,7 +20,7 @@
 	if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
 	
 			<li id="search" class="widget-container widget_search well">
-			   <h3>Recherche</h3>
+			   <h3 class="widget-title">Recherche</h3>
 				<?php get_search_form(); ?>
 			</li>
 

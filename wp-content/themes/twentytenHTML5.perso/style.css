@@ -14,7 +14,7 @@ Template: twentytenHTML5
 //@import url("../../../../joomla_3.0/templates/protostar/css/template.min.css");
 //@import url("../../../../joomla_3.0/templates/protostar/css/templatemod.css");
 html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+p, blockquote, pre,
 abbr, address, cite, code,
 del, dfn, em, img, ins, kbd, q, samp,
 small, strong, sub, sup, var,
@@ -82,9 +82,10 @@ h1, h2, h3 {
 }
 
 #content, #content input, #content textarea {
-    color: #444444;
+    /*color: #444444;*/
     font-size: 16px;
     line-height: 18px!important;
+	
 }
 #branding {
 	padding-left:0px;
