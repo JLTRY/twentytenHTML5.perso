@@ -16,7 +16,13 @@ require_once('horzsidebar.php');
 
 <?php get_header(); ?>
 		<div class="row-fluid">
-		<div class="span9">
+		<?php
+		if ( is_active_sidebar( 'primary-widget-area' ) || is_active_sidebar( 'secondary-widget-area' ) ) : ?>
+			<div class="span8">
+		<?php else: ?>
+			<div class="span11">
+		<?php endif; ?>
+		
 			<section id="content" role="main" >
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>

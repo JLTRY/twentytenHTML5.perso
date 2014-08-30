@@ -319,5 +319,10 @@ ul.xoxo >div {
 	
 }
 
-
-
+/*other medias*/
+@media (min-width: 981px) {
+#primary, #secondary {	
+		float : left !important;
+		margin-left: 10px !important;
+	}
+}
