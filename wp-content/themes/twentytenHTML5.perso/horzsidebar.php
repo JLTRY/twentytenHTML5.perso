@@ -16,6 +16,12 @@ function get_horzsidebar()
 					dynamic_sidebar( 'horizontal-2' ); 
 				  }?>	  
 		</div>
+		<div class="widget-area horizontal-3 span4 offset1_4 well">		  
+			<?php if ( is_active_sidebar( 'horizontal-3' ) ) 
+			      {
+					dynamic_sidebar( 'horizontal-3' ); 
+				  }?>	  
+		</div>
    </div>
 <?php 
 }

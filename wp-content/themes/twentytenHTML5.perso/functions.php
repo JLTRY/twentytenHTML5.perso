@@ -89,7 +89,16 @@ function my_child_theme_widgets_init() {
 		'after_title' => '</h3>'
 		)	
 	);
-
+	register_sidebar( array(
+		'name' => __( 'Horizontal Widget Area 3', 'twentyten' ),
+		'id' => 'horizontal-3',
+		'description' => __( 'The 3nd horizontal widget area', 'twentyten' ),	
+		'before_widget' => '<!-- horz -->',
+		'after_widget' => '<!-- -->',		
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>'
+		)	
+	);
  }
 
 
