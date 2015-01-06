@@ -11,8 +11,6 @@ Template: twentytenHTML5
 
 
 @import url("../twentytenHTML5/style.css");
-//@import url("../../../../joomla_3.0/templates/protostar/css/template.min.css");
-//@import url("../../../../joomla_3.0/templates/protostar/css/templatemod.css");
 html, body, div, span, object, iframe,
 p, blockquote, pre,
 abbr, address, cite, code,
@@ -27,7 +25,7 @@ footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video 
 {
 	font-size:13px;
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif!important;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 body {
 	padding: 20px;
@@ -87,6 +85,15 @@ h1, h2, h3 {
     line-height: 18px!important;
 	
 }
+input, textarea, .uneditable-input {
+    width: 406px!important;
+}
+
+.wpcf7-submit winput[type="button"]{
+	width: 200px!important;
+}
+
+
 #branding {
 	padding-left:0px;
 	padding-bottom:10px;
@@ -200,6 +207,8 @@ p.blubox-jck
     width: 100%;
 }
 
+
+
 .row {
     margin-left: 0px!important;
 }
@@ -223,10 +232,21 @@ div.mw-geshi {
 }
 
 
-div#calendar_wrap,div.wp-forecast{
-    border: 1px solid #DDDDDD;
-    border-radius: 10px;  
-	padding:5px;
+div#calendar_wrap, div.wp-forecast {
+    border: 1px solid #333;
+	border-color: #dddddd #dddddd #dddddd #dddddd;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+div#calendar_wrap th , div.wp-forecast  th, div.wp-forecast-curr-head{
+	color: #222;
+}
+
+	
+
+div.wp-forecast-curr-right,#wp-calendar tbody td  {
+	color: #333;
 }
 
 div.wpff_nav {
