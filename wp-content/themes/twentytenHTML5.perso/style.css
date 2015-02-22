@@ -44,6 +44,10 @@ header {
 
 footer {
 	margin-bottom:0px;
+    clear: both;
+    width: 80%;
+	margin-left:5%;
+	horizontal-align:middle;
 }
 
 h1, h2, h3 {
@@ -170,12 +174,6 @@ input, textarea, .uneditable-input {
     text-decoration: none;
 }
 
-footer {
-    clear: both;
-    width: 80%;
-	margin-left:10%;
-	horizontal-align:middle;
-}
 
 
 article{
