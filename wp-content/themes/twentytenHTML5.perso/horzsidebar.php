@@ -4,7 +4,7 @@ function get_horzsidebar()
 ?>
 	
 	<div class="row-fluid">
-		<div class="widget-area horizontal-1 span3 offset1_4 well">
+		<div class="widget-area horizontal-1 span4 offset1_4 well">
 			<?php if ( is_active_sidebar( 'horizontal-1' ) ) 
 			      {
 					dynamic_sidebar( 'horizontal-1' ); 
@@ -16,7 +16,7 @@ function get_horzsidebar()
 					dynamic_sidebar( 'horizontal-2' ); 
 				  }?>	  
 		</div>
-		<div class="widget-area horizontal-3 span4 offset1_4 well">		  
+		<div class="widget-area horizontal-3 span3 offset1_4 well">		  
 			<?php if ( is_active_sidebar( 'horizontal-3' ) ) 
 			      {
 					dynamic_sidebar( 'horizontal-3' ); 
