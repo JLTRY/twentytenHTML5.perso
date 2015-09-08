@@ -105,8 +105,12 @@ function my_child_theme_widgets_init() {
 add_action( 'after_setup_theme', 'my_child_theme_setup' );
 
 function wpt_register_js() {
-	wp_register_script('jquery',  '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
+	wp_deregister_script('jquery');
+	wp_register_script('jquery',  '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
 	wp_enqueue_script('jquery');	
+	wp_deregister_script('jquery-ui');
+    /*wp_register_script('jquery-ui',"//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js");
+    wp_enqueue_script('jquery-ui');*/
 	wp_register_script('bootstrap', '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js', 'jquery');		
 	wp_enqueue_script('bootstrap');			
 }
