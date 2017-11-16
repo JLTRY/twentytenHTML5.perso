@@ -106,13 +106,17 @@ add_action( 'after_setup_theme', 'my_child_theme_setup' );
 
 function wpt_register_js() {
 	wp_deregister_script('jquery');
-	wp_register_script('jquery',  '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
+	wp_register_script('jquery',  '//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js');
 	wp_enqueue_script('jquery');	
-	wp_deregister_script('jquery-ui');
-    /*wp_register_script('jquery-ui',"//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js");
+	wp_register_script('jquery-migrate',  'http://code.jquery.com/jquery-migrate-1.2.1.js');
+	wp_enqueue_script('jquery-migrate');	
+	/*wp_deregister_script('jquery-ui');
+    wp_register_script('jquery-ui',"//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js");
     wp_enqueue_script('jquery-ui');*/
 	wp_register_script('bootstrap', '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js', 'jquery');		
-	wp_enqueue_script('bootstrap');			
+	wp_enqueue_script('bootstrap');
+	wp_register_script('joomlauser', '../../../joomla_3.0/templates/protostar/js/user.js');
+	wp_enqueue_script('joomlauser');
 }
 add_action( 'init', 'wpt_register_js' );
 
@@ -125,22 +129,27 @@ function wpt_register_css() {
 	$parent = wp_get_theme( $parent );
 	 
 	// Enqueue the parent stylesheet
-	//wp_enqueue_style( 'theme-name-parent-style', get_template_directory_uri() . '/style.css', array(), $parent['Version'], 'all' );
-	//wp_register_style( 'typography', 'http://www.jltryoen.fr/min/?g=typography'); //'http://www.jltryoen.fr/joomla_3.0/plugins/editors/jckeditor/typography/typography.min.css');
-	//wp_enqueue_style( 'typography' );
-	wp_register_style( 'css3treeview', 'http://www.jltryoen.fr/weave/favorites/css/css3treeview.css');
-	wp_enqueue_style( 'css3treeview' );
-	wp_register_style( 'joomla', 'http://www.jltryoen.fr/min/?g=joomla');
-	wp_enqueue_style( 'joomla' );
 	
+	wp_register_style( 'twentytenHTML5', get_template_directory_uri() . '/style.css', array(), $parent['Version'], 'all' );		
+	wp_register_style( 'twentytenHTML5.perso', get_stylesheet_uri() ,array('twentytenHTML5'));		
+	wp_register_style( 'joomla', 'http://www.jltryoen.fr/min/?g=joomla', array('twentytenHTML5.perso'));
 	
 }
-add_action( 'wp_enqueue_scripts', 'wpt_register_css' );
+
+
+add_action( 'init', 'wpt_register_css' );
+
+function enqueue_twentytenHTML5perso_styles() {
+	wp_enqueue_style('twentytenHTML5');
+	wp_enqueue_style('twentytenHTML5.perso');
+	wp_enqueue_style( 'joomla' );
+}	
+add_action( 'wp_enqueue_scripts', 'enqueue_twentytenHTML5perso_styles' );
 	
 
 register_default_headers( array(
 		'montagne' => array(
-			'url' => 'http://images.jltryoen.fr/Images/montagne3.jpg',
+			'url' => 'http://images.jltryoen.fr/Images/montagne3_grey.jpg',
 			'thumbnail_url' => '%s/images/headers/montagne3-thumbnail.jpg',
 			/* translators: header image description */
 			'description' => __( 'Montagne', 'twentyten' )

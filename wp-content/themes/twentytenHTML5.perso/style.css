@@ -10,7 +10,7 @@ Template: twentytenHTML5
 
 
 
-@import url("../twentytenHTML5/style.css");
+
 html, body, div, span, object, iframe,
 p, blockquote, pre,
 abbr, address, cite, code,
@@ -24,14 +24,19 @@ article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video 
 {
-	font-size:13px;
+	//font-size:13px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 body {
 	padding: 20px;
 	background: #fafafa url('/images/headbg.jpg') top left no-repeat fixed !important;
-    line-height: 18px;
+    color: #333;
 }
+
+article {
+	font-size:13px;
+	
+}	
 
 strong { 
 	font-weight: bold; 
@@ -46,7 +51,7 @@ footer {
 	margin-bottom:0px;
     clear: both;
     width: 80%;
-	margin-left:10%;
+	margin-left:8%;
 	horizontal-align:middle;
 }
 
@@ -221,29 +226,25 @@ div.mw-geshi {
     padding: 5px;
 }
 
-
-.ui-widget-header {
-    background: none!important;
-    border: none;/*1px solid #4297D7;*/
-    color: #FFFFFF;
-    font-weight: bold;
+.widget-area a:active,
+.widget-area a:hover {
+	text-decoration: none!important;
 }
 
-
-div#calendar_wrap, div.wp-forecast {
+div.wp-forecast {
     border: 1px solid #333;
 	border-color: #dddddd #dddddd #dddddd #dddddd;
     border-radius: 10px;
     padding: 5px;
 }
 
-div#calendar_wrap th , div.wp-forecast  th, div.wp-forecast-curr-head{
+div.wp-forecast  th, div.wp-forecast-curr-head{
 	color: #222;
 }
 
 	
 
-div.wp-forecast-curr-right,#wp-calendar tbody td  {
+div.wp-forecast-curr-right  {
 	color: #333;
 }
 

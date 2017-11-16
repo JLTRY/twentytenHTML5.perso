@@ -26,7 +26,7 @@
 				<p style="float: left;">
 					<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"> 
 						<img style="vertical-align:middle;" alt="Creative Commons attribution non commercial partage à l'identique" id="cc-by-nc" src="/images/cc-by-nc-sa.png" style="width: 88px; height: 31px; " />
-					</a>© 2011-2015 Site de JL TRYOEN
+					</a>© 2011-2017 Site de JL TRYOEN
 				</p>	
 				<p  style="float: right;">
 					<a href="a-propos" target="_self" title="À propos du site de JL TRYOEN">À propos</a> | <a href="plan-du-site" target="_self" title="Plan du site">Plan</a> | <a href="contact" target="_self" title="Me contacter par mail">Contact</a>

@@ -66,7 +66,7 @@ require_once('wp_bootstrap_navwalker.php');
 <body <?php body_class(); ?>>
 <div class="body">
 <div class="container">
-	<header>
+	<header class="header" role="banner">
 		<div id="masthead">
 			<div id="branding" role="banner">
 				<div class="header-inner clearfix">
@@ -106,6 +106,15 @@ require_once('wp_bootstrap_navwalker.php');
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
+					<div class="navbar pull-left">
+						<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+							<span class="element-invisible">"togle"</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</a>
+					</div>
+					<div class="nav-collapse nav-collapse">					
 				<?php /*wp_nav_menu( array( 'container' => 'nav', 'sort_column' => 'menu_order', 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); */?>
                                  <?php /* Primary navigation */
 					wp_nav_menu( array(
@@ -116,7 +125,8 @@ require_once('wp_bootstrap_navwalker.php');
 					  //Process nav menu using our custom nav walker
 					  'walker' => new wp_bootstrap_navwalker())
 					);
-				?>				
+				?>	
+				</div>
 			</nav><!-- #nav -->
 		</div><!-- #masthead -->
 	</header>
