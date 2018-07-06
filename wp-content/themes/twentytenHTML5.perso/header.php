@@ -81,7 +81,7 @@ require_once('wp_bootstrap_navwalker.php');
 					else : 						?>
 						<!--<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />-->
 						<a class="brand pull-left" href="">
-							<img src="<?php header_image(); ?>" alt="perso" />
+							<img src="http://www.jltryoen.fr/images/Images/montagne3.jpg" alt="perso" />
 						</a>
 					<?php endif; ?>
 					
