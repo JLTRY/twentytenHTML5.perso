@@ -132,7 +132,7 @@ function wpt_register_css() {
 	
 	wp_register_style( 'twentytenHTML5', get_template_directory_uri() . '/style.css', array(), $parent['Version'], 'all' );		
 	wp_register_style( 'twentytenHTML5.perso', get_stylesheet_uri() ,array('twentytenHTML5'));		
-	wp_register_style( 'joomla', 'http://www.jltryoen.fr/min/?g=joomla', array('twentytenHTML5.perso'));
+	wp_register_style( 'joomla', 'http://minify.jltryoen.fr/?g=joomla', array('twentytenHTML5.perso'));
 	
 }
 
