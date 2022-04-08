@@ -1,16 +1,6 @@
 <?php
-// remove wp version param from any enqueued scripts
-//Read more: http://techtalk.virendrachandak.com/how-to-remove-wordpress-version-parameter-from-js-and-css-files/#ixzz349zfydrX
 
-/*
-function vc_remove_wp_ver_css_js( $src ) {
-    if ( strpos( $src, 'ver=' . get_bloginfo( 'version' ) ) )
-        $src = remove_query_arg( 'ver', $src );
-    return $src;
-}
-add_filter( 'style_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
-add_filter( 'script_loader_src', 'vc_remove_wp_ver_css_js', 9999 );
-*/
+
 
 /////////////////////////////////////////////////////////////////////////////////
 // Add viewport meta tag to head
@@ -106,19 +96,16 @@ add_action( 'after_setup_theme', 'my_child_theme_setup' );
 
 function wpt_register_js() {
 	wp_deregister_script('jquery');
-	wp_register_script('jquery',  '//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js');
+	wp_register_script('jquery',  'http://www.jltryoen.fr/joomla_4.0/media/vendor/jquery/js/jquery.min.js');
 	wp_enqueue_script('jquery');
-	//wp_register_script('jquery-migrate',  'http://code.jquery.com/jquery-migrate-1.2.1.js');
-	//wp_enqueue_script('jquery-migrate');
-	/*wp_deregister_script('jquery-ui');
-    wp_register_script('jquery-ui',"//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js");
-    wp_enqueue_script('jquery-ui');*/
-	wp_register_script('bootstrap', '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js', 'jquery');
+	wp_register_script('bootstrap', 'http://www.jltryoen.fr/drupal/themes/bootstrap5/dist/bootstrap/5.1.3/dist/js/bootstrap.bundle.min.js', 'jquery');
 	wp_enqueue_script('bootstrap');
-	wp_register_script('joomlauser', '../../../joomla_3.0/templates/protostar/js/user.js');
-	wp_enqueue_script('joomlauser');
+	wp_register_script('joomla', '//www.jltryoen.fr/MediaWiki/skins/mediawikibootstrap/js/mediawiki.js', 'jquery');
+	wp_enqueue_script('joomla');
+	
+	
 }
-add_action( 'init', 'wpt_register_js' );
+add_action( 'wp_enqueue_scripts', 'wpt_register_js' );
 
 
 
@@ -129,9 +116,10 @@ function wpt_register_css() {
 	$parent = wp_get_theme( $parent );
 	 
 	// Enqueue the parent stylesheet
-	wp_register_style( 'twentytenHTML5', get_template_directory_uri() . '/style.css', array(), $parent['Version'], 'all' );
-	wp_register_style( 'twentytenHTML5.perso', get_stylesheet_uri() ,array('twentytenHTML5'));
-	wp_register_style( 'joomla', 'http://minify.jltryoen.fr/?g=joomla', array('twentytenHTML5.perso'));
+	//wp_register_style( 'bootstrap', "http://www.jltryoen.fr/media/vendor/bootstrap/css/bootstrap.css", array());
+	//wp_register_style( 'twentytenHTML5', get_template_directory_uri() . '/style.css', array('bootstrap'), $parent['Version'], 'all' );
+	wp_register_style( 'joomla4', 'http://minify.jltryoen.fr/joomla4', array());
+	wp_register_style( 'twentytenHTML5.perso', get_stylesheet_uri() ,array('joomla4'));
 
 }
 
@@ -140,10 +128,10 @@ add_action( 'init', 'wpt_register_css' );
 
 function enqueue_twentytenHTML5perso_styles() {
 	wp_enqueue_style('twentytenHTML5');
-	wp_enqueue_style('twentytenHTML5.perso');
-	wp_enqueue_style( 'joomla' );
+	wp_enqueue_style('joomla4');
+	wp_enqueue_style( 'bootstrap' );
 }
-add_action( 'wp_enqueue_scripts', 'enqueue_twentytenHTML5perso_styles' );
+add_action( 'wp_enqueue_styles', 'enqueue_twentytenHTML5perso_styles' );
 
 
 register_default_headers( array(

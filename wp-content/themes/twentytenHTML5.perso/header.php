@@ -68,8 +68,14 @@ require_once('wp_bootstrap_navwalker.php');
 <div class="container">
 	<header class="header" role="banner">
 		<div id="masthead">
+			<div class="navbar navbar-expand-lg navbar-light bg-faded">
+				<button class="navbar-toggler ml-auto collapsed" id="btn-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
 			<div id="branding" role="banner">
-				<div class="header-inner clearfix">
+
+				<div class="header-inner clearfix row">
 				<?php
 					// Check if this is a post or page, if it has a thumbnail, and if it's a big one
 					if ( is_singular() &&
@@ -78,56 +84,49 @@ require_once('wp_bootstrap_navwalker.php');
 							$image[1] >= HEADER_IMAGE_WIDTH ) :
 						// Houston, we have a new header image!
 						echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-					else : 						?>
-						<!--<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />-->
-						<a class="brand pull-left" href="">
-							<img src="http://www.jltryoen.fr/images/Images/montagne3.jpg" alt="perso" />
-						</a>
+					else : ?>
+						<div class="col-lg-8">
+							<a class="brand pull-left" href="">
+								<img src="<?php header_image(); ?>" alt="perso" />
+							</a>
+						</div>
 					<?php endif; ?>
 					
-					<div class="header-search pull-right">
+					<div class="header-search col-lg-4">
 						<ul class="nav menu btn">
 						<li class="item-695">
 						<?php
 							if ( is_user_logged_in() ) {
-									echo '<a href="'.wp_logout_url(home_url()).'" title="Logout">Deconnexion</a>';
+									echo '<a class="btn btn-light" href="'.wp_logout_url(home_url()).'" title="Logout">Deconnexion</a>';
 								} else {
-									echo '<a href="/wordpress/login">Connexion</a>';
+									echo '<a class="btn btn-light" href="/wordpress/login">Connexion</a>';
 							}
-						?>
-						
+						?>						
 						</li>
 						</ul>
 					</div>
-				</div>	
+				</div><!-- header-inner -->	
 			</div><!-- #branding -->
 
-			<nav class="navigation" role="navigation">
+			<!-- <nav class="navbar-expand-lg navbar-light text-dark bg-light" role="navigation"> -->
+			<div class="container d-flex">
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
-				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
-				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
-					<div class="navbar pull-left">
-						<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-							<span class="element-invisible">"togle"</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</a>
-					</div>
-					<div class="nav-collapse nav-collapse">					
-				<?php /*wp_nav_menu( array( 'container' => 'nav', 'sort_column' => 'menu_order', 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); */?>
-                                 <?php /* Primary navigation */
-					wp_nav_menu( array(
-					  'menu' => 'top_menu',
-					  'depth' => 2,
-					  'container' => false,
-					  'menu_class' => 'nav nav-bar nav-pills',
-					  //Process nav menu using our custom nav walker
-					  'walker' => new wp_bootstrap_navwalker())
-					);
-				?>	
+				<!--<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>-->
+				
+				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>				
+				<div class="navbar-expand-lg navbar-light bg-light navbar-collapse collapse" id="navbarSupportedContent">					
+					<?php /* Primary navigation */
+						wp_nav_menu( array(
+						  'menu' => 'top_menu',
+						  'depth' => 2,
+						  'container' => false,
+						  'menu_class' => 'menu navbar-nav me-auto',
+						  //Process nav menu using our custom nav walker
+						  'walker' => new wp_bootstrap_navwalker())
+						);
+					?>	
 				</div>
-			</nav><!-- #nav -->
+			</div> <!-- </nav> #nav -->
 		</div><!-- #masthead -->
 	</header>
 

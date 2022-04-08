@@ -15,12 +15,12 @@ require_once('horzsidebar.php');
 ?>
 
 <?php get_header(); ?>
-		<div class="row-fluid">
+	<div class="row">
 		<?php
 		if ( is_active_sidebar( 'primary-widget-area' ) || is_active_sidebar( 'secondary-widget-area' ) ) : ?>
-			<div class="span8">
+			<div class="col-lg-8">
 		<?php else: ?>
-			<div class="span11">
+			<div class="col-lg-11">
 		<?php endif; ?>
 		
 			<section id="content" role="main" >
@@ -53,3 +53,4 @@ require_once('horzsidebar.php');
 </div> 
 <?php get_horzsidebar();?>
 <?php get_footer(); ?>
+

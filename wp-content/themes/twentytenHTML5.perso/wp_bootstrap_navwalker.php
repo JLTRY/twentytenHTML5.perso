@@ -21,10 +21,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {		
 		$indent = str_repeat( "\t", $depth );
-		/*if ($dept == 0)
-			$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
-		else*/	
-			$output .= "\n$indent<ul class=\" nav-child unstyled small\">\n";
+		$output .= "\n$indent<ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n";
 	}
 
 	/**
@@ -66,8 +63,9 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
 			if ( $args->has_children )
-				$class_names .= ' dropdown deeper parent';
-
+				$class_names .= ' dropdown nav-item';
+			else
+				$class_names .= ' nav-item';
 			if ( in_array( 'current-menu-item', $classes ) )
 				$class_names .= ' active';
 
@@ -86,11 +84,13 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			// If item has_children add atts to a.
 			if ( $args->has_children && $depth === 0 ) {
 				$atts['href']   		= '#';
-				$atts['data-toggle']	= 'dropdown';
-				$atts['class']			= 'dropdown-toggle';
+				$atts['data-bs-toggle']	= 'dropdown';
+				$atts['class']			= 'nav-link dropdown-toggle';
+				$atts['aria-expanded']  = 'false';
 				$atts['aria-haspopup']	= 'true';
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
+				$atts['class']			= 'nav-link';
 			}
 
 			$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );

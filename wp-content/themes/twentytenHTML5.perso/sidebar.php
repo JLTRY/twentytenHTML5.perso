@@ -9,7 +9,7 @@
  ?>
 <?php 
 if ( is_active_sidebar( 'primary-widget-area' ) || is_active_sidebar( 'secondary-widget-area' ) ) : ?>
-<div class="span3 row">
+<div class="col-lg-3 row">
 <?php  endif; ?>
 		
 <?php
