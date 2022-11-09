@@ -7,6 +7,7 @@ Version: 0.1
 Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, theme-options, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style, html5
 Template: twentytenHTML5
 */
+@import url("http://minify.jltryoen.fr/joomla4");
 .navbar-light .navbar-toggler-icon {
 	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
@@ -25,6 +26,20 @@ Template: twentytenHTML5
 	border-color: rgba(0,0,0,.1);
 }
 
+
+article{
+	border: solid 1px #ddd;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	margin-bottom: 10px;
+	padding-left: 15px;
+	padding-bottom: 15px;
+	padding-top: 10px;
+}
 
 p.nocomments
 {

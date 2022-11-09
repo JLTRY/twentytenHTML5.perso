@@ -100,7 +100,7 @@ function wpt_register_js() {
 	wp_enqueue_script('jquery');
 	wp_register_script('bootstrap', 'http://www.jltryoen.fr/drupal/themes/bootstrap5/dist/bootstrap/5.1.3/dist/js/bootstrap.bundle.min.js', 'jquery');
 	wp_enqueue_script('bootstrap');
-	wp_register_script('joomla', '//www.jltryoen.fr/MediaWiki/skins/mediawikibootstrap/js/mediawiki.js', 'jquery');
+	wp_register_script('joomla', 'http://www.jltryoen.fr/MediaWiki/skins/mediawikibootstrap5/resources/js/mediawiki.js', 'jquery');
 	wp_enqueue_script('joomla');
 	
 	
@@ -127,7 +127,7 @@ function wpt_register_css() {
 add_action( 'init', 'wpt_register_css' );
 
 function enqueue_twentytenHTML5perso_styles() {
-	wp_enqueue_style('twentytenHTML5');
+	//wp_enqueue_style('twentytenHTML5');
 	wp_enqueue_style('joomla4');
 	wp_enqueue_style( 'bootstrap' );
 }

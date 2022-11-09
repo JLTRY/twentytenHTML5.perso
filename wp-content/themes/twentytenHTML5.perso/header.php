@@ -99,7 +99,7 @@ require_once('wp_bootstrap_navwalker.php');
 							if ( is_user_logged_in() ) {
 									echo '<a class="btn btn-light" href="'.wp_logout_url(home_url()).'" title="Logout">Deconnexion</a>';
 								} else {
-									echo '<a class="btn btn-light" href="/wordpress/login">Connexion</a>';
+									echo '<a class="btn btn-light" href="' . wp_login_url(home_url()) . '">Connexion</a>';
 							}
 						?>						
 						</li>
