@@ -109,12 +109,12 @@ require_once('wp_bootstrap_navwalker.php');
 			</div><!-- #branding -->
 
 			<!-- <nav class="navbar-expand-lg navbar-light text-dark bg-light" role="navigation"> -->
-			<div class="container d-flex">
+			<!--<div class="container d-flex"> -->
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<!--<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>-->
 				
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>				
-				<div class="navbar-expand-lg navbar-light bg-light navbar-collapse collapse" id="navbarSupportedContent">					
+				<div class="navbar navbar-expand-lg navbar-light bg-faded navbar-collapse collapse" id="navbarSupportedContent" style="position:relative">					
 					<?php /* Primary navigation */
 						wp_nav_menu( array(
 						  'menu' => 'top_menu',
@@ -126,7 +126,7 @@ require_once('wp_bootstrap_navwalker.php');
 						);
 					?>	
 				</div>
-			</div> <!-- </nav> #nav -->
+			<!--</div>--> <!-- </nav> #nav -->
 		</div><!-- #masthead -->
 	</header>
 
