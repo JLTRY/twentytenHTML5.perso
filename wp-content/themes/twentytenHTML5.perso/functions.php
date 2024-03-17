@@ -96,9 +96,9 @@ add_action( 'after_setup_theme', 'my_child_theme_setup' );
 
 function wpt_register_js() {
 	wp_deregister_script('jquery');
-	wp_register_script('jquery',  'http://www.jltryoen.fr/joomla_4.0/media/vendor/jquery/js/jquery.min.js');
+	wp_register_script('jquery',  'http://www.jltryoen.fr/joomla_5.0/media/vendor/jquery/js/jquery.min.js');
 	wp_enqueue_script('jquery');
-	wp_register_script('bootstrap', 'http://www.jltryoen.fr/drupal/themes/bootstrap5/dist/bootstrap/5.1.3/dist/js/bootstrap.bundle.min.js', 'jquery');
+	wp_register_script('bootstrap', 'http://wiki.jltryoen.fr/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js', 'jquery');
 	wp_enqueue_script('bootstrap');
 	wp_register_script('joomla', 'http://www.jltryoen.fr/MediaWiki/skins/mediawikibootstrap5/resources/js/mediawiki.js', 'jquery');
 	wp_enqueue_script('joomla');
