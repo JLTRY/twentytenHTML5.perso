@@ -1,7 +1,5 @@
 <?php
 
-
-
 /////////////////////////////////////////////////////////////////////////////////
 // Add viewport meta tag to head
 //
@@ -142,11 +140,5 @@ function list_subpages() {
     return '<ul class="nav nav-tabs nav-stacked">'.wp_list_pages('echo=0&depth=0&title_li=&child_of='.get_the_id()).'</ul>';
 }
 add_shortcode('subpages', 'list_subpages');
-
-
-
-
-
-
 
 ?>

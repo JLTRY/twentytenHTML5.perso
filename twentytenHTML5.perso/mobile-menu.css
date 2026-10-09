@@ -4,10 +4,13 @@
 }
 
 @media (max-width: 991.98px) {
-	#btn-toggler {
+	#btn-toggler,
+	.navbar-toggler {
 		display: block !important;
-		position: relative;
+		position: relative !important;
 		top: 10px !important;
+		left: 10px !important;
+		margin-top: 0 !important;
 		margin-bottom: 10px !important;
 	}
 
@@ -16,9 +19,16 @@
 	}
 
 	#navbarSupportedContent {
+		display: none !important;
 		width: min(85vw, 360px);
 		padding: 0 !important;
 		background: #fff;
+	}
+
+	#navbarSupportedContent.show,
+	#navbarSupportedContent.offcanvas.show,
+	#navbarSupportedContent.offcanvas.in {
+		display: block !important;
 	}
 
 	#navbarSupportedContent .offcanvas-header {
@@ -111,7 +121,8 @@
 
 /* Desktop navbar - restore original horizontal layout */
 @media (min-width: 992px) {
-	#btn-toggler {
+	#btn-toggler,
+	.navbar-toggler {
 		display: none !important;
 	}
 
