@@ -14,6 +14,7 @@ require_once('wp_bootstrap_navwalker.php');
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<title>
 	<?php // Returns the title based on what is being viewed
 		if ( is_single() ) { // single posts
@@ -23,7 +24,7 @@ require_once('wp_bootstrap_navwalker.php');
 			bloginfo( 'name' );
 			if( get_bloginfo( 'description' ) )
 				echo ' | ' ; bloginfo( 'description' );
-			twentyten_the_page_number();
+			twentythen_the_page_number();
 		} elseif ( is_page() ) { // WordPress Pages
 			single_post_title( '' ); echo ' | '; bloginfo( 'name' );
 		} elseif ( is_search() ) { // Search results
@@ -69,7 +70,7 @@ require_once('wp_bootstrap_navwalker.php');
 	<header class="header" role="banner">
 		<div id="masthead">
 			<div class="navbar navbar-expand-lg navbar-light bg-faded">
-				<button class="navbar-toggler ml-auto collapsed" id="btn-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler ml-auto collapsed" id="btn-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 			</div>
@@ -97,7 +98,7 @@ require_once('wp_bootstrap_navwalker.php');
 						<li class="item-695">
 						<?php
 							if ( is_user_logged_in() ) {
-									echo '<a class="btn btn-light" href="'.wp_logout_url(home_url()).'" title="Logout">Deconnexion</a>';
+									echo '<a class="btn btn-light" href="'.wp_logout_url(home_url())."'" title="Logout">Deconnexion</a>';
 								} else {
 									echo '<a class="btn btn-light" href="' . wp_login_url(home_url()) . '">Connexion</a>';
 							}
@@ -108,13 +109,17 @@ require_once('wp_bootstrap_navwalker.php');
 				</div><!-- header-inner -->	
 			</div><!-- #branding -->
 
-			<!-- <nav class="navbar-expand-lg navbar-light text-dark bg-light" role="navigation"> -->
-			<!--<div class="container d-flex"> -->
-			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
-				<!--<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>-->
-				
-				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>				
-				<div class="navbar navbar-expand-lg navbar-light bg-faded navbar-collapse collapse" id="navbarSupportedContent" style="position:relative">					
+			<!-- Mobile offcanvas menu -->
+			<div class="navbar navbar-transparent offcanvas offcanvas-start" tabindex="-1" id="navbarSupportedContent" aria-labelledby="mobileMenuLogo">
+				<div class="offcanvas-header">
+					<button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<div class="mobile-menu-brand">
+						<a class="mobile-menu-logo" href="<?php echo home_url(); ?>" aria-label="Home">
+							<img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" />
+						</a>
+					</div>
 					<?php /* Primary navigation */
 						wp_nav_menu( array(
 						  'menu' => 'top_menu',
@@ -124,9 +129,23 @@ require_once('wp_bootstrap_navwalker.php');
 						  //Process nav menu using our custom nav walker
 						  'walker' => new wp_bootstrap_navwalker())
 						);
-					?>	
+					?>
 				</div>
-			<!--</div>--> <!-- </nav> #nav -->
+			</div>
+
+			<!-- Desktop navbar menu -->
+			<div class="navbar navbar-expand-lg navbar-light bg-faded navbar-collapse" id="navbarDesktopMenu" style="position:relative">					
+				<?php /* Primary navigation */
+					wp_nav_menu( array(
+					  'menu' => 'top_menu',
+					  'depth' => 2,
+					  'container' => false,
+					  'menu_class' => 'menu navbar-nav me-auto',
+					  //Process nav menu using our custom nav walker
+					  'walker' => new wp_bootstrap_navwalker())
+					);
+				?>
+			</div>
 		</div><!-- #masthead -->
 	</header>
 
