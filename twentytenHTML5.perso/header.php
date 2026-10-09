@@ -24,7 +24,7 @@ require_once('wp_bootstrap_navwalker.php');
 			bloginfo( 'name' );
 			if( get_bloginfo( 'description' ) )
 				echo ' | ' ; bloginfo( 'description' );
-			twentythen_the_page_number();
+			//twentythen_the_page_number();
 		} elseif ( is_page() ) { // WordPress Pages
 			single_post_title( '' ); echo ' | '; bloginfo( 'name' );
 		} elseif ( is_search() ) { // Search results
@@ -98,7 +98,7 @@ require_once('wp_bootstrap_navwalker.php');
 						<li class="item-695">
 						<?php
 							if ( is_user_logged_in() ) {
-									echo '<a class="btn btn-light" href="'.wp_logout_url(home_url())."'" title="Logout">Deconnexion</a>';
+									echo '<a class="btn btn-light" href="'.wp_logout_url(home_url()).'" title="Logout">Deconnexion</a>';
 								} else {
 									echo '<a class="btn btn-light" href="' . wp_login_url(home_url()) . '">Connexion</a>';
 							}
