@@ -1,0 +1,165 @@
+/* WordPress Theme: Mobile offcanvas menu (Joomla/Cassiopeia style). */
+#navbarSupportedContent .mm-toggler {
+	display: none;
+}
+
+@media (max-width: 991.98px) {
+	#btn-toggler,
+	.navbar-toggler {
+		display: block !important;
+		position: relative !important;
+		top: 10px !important;
+		left: 10px !important;
+		margin-top: 0 !important;
+		margin-bottom: 10px !important;
+	}
+
+	#navbarDesktopMenu {
+		display: none !important;
+	}
+
+	#navbarSupportedContent {
+		display: none !important;
+		width: min(85vw, 360px);
+		padding: 0 !important;
+		background: #fff;
+	}
+
+	#navbarSupportedContent.show,
+	#navbarSupportedContent.offcanvas.show,
+	#navbarSupportedContent.offcanvas.in {
+		display: block !important;
+	}
+
+	#navbarSupportedContent .offcanvas-header {
+		display: flex;
+		position: relative;
+		align-items: center;
+		justify-content: flex-end !important;
+		width: 100%;
+		min-height: 3rem;
+		padding: 10px !important;
+		border-bottom: 0;
+	}
+
+	#navbarSupportedContent .offcanvas-header .btn-close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		margin: 0 !important;
+		padding: .5rem;
+	}
+
+	#navbarSupportedContent .offcanvas-body {
+		padding: 10px !important;
+	}
+
+	#navbarSupportedContent .mobile-menu-brand {
+		margin: 0 0 1rem;
+		padding: 0;
+	}
+
+	#navbarSupportedContent .mobile-menu-logo {
+		display: block;
+		margin: 0 !important;
+		padding: 0 !important;
+		max-width: 100%;
+	}
+
+	#navbarSupportedContent .mobile-menu-logo img {
+		display: block;
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		max-height: 10rem;
+		margin: 0 !important;
+	}
+
+	#navbarSupportedContent > .offcanvas-body > ul.menu.navbar-nav {
+		display: block;
+		width: 100%;
+		margin: 0 !important;
+		padding: 0 !important;
+		list-style: none;
+	}
+
+	#navbarSupportedContent > .offcanvas-body > ul.menu.navbar-nav > li {
+		display: block;
+		width: 100%;
+		margin: 0 !important;
+		padding: 0 !important;
+		list-style: none;
+	}
+
+	#navbarSupportedContent > .offcanvas-body > ul.menu.navbar-nav > li > a {
+		display: block;
+		width: 100%;
+		margin: 0 !important;
+		padding: .75rem 3.5rem .75rem 0 !important;
+	}
+
+	#navbarSupportedContent .nav-item,
+	#navbarSupportedContent .dropdown-menu {
+		width: 100%;
+	}
+
+	#navbarSupportedContent .dropdown-menu {
+		position: static;
+		float: none;
+		margin: 0 !important;
+		border: 0;
+		box-shadow: none;
+		background: #f8f9fa;
+		padding-left: 0;
+	}
+
+	#navbarSupportedContent .dropdown-menu a {
+		white-space: normal;
+		padding-left: 2rem !important;
+	}
+}
+
+/* Desktop navbar - restore original horizontal layout */
+@media (min-width: 992px) {
+	#btn-toggler,
+	.navbar-toggler {
+		display: none !important;
+	}
+
+	#navbarSupportedContent {
+		display: none !important;
+	}
+
+	#navbarDesktopMenu {
+		display: block !important;
+		width: auto;
+		padding: 0 !important;
+		background: transparent;
+	}
+
+	#navbarDesktopMenu > ul.menu.navbar-nav {
+		display: flex !important;
+		flex-direction: row !important;
+		align-items: center;
+		width: auto;
+		margin: 0 !important;
+		padding: 0 !important;
+		list-style: none;
+	}
+
+	#navbarDesktopMenu > ul.menu.navbar-nav > li {
+		display: block;
+		width: auto;
+		white-space: nowrap;
+	}
+
+	#navbarDesktopMenu > ul.menu.navbar-nav > li > a {
+		white-space: nowrap;
+	}
+
+	#navbarDesktopMenu .dropdown-menu {
+		position: absolute;
+		width: auto;
+		background: #fff;
+	}
+}
