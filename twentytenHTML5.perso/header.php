@@ -24,7 +24,7 @@ require_once('wp_bootstrap_navwalker.php');
 			bloginfo( 'name' );
 			if( get_bloginfo( 'description' ) )
 				echo ' | ' ; bloginfo( 'description' );
-			//twentythen_the_page_number();
+			twentyten_the_page_number();
 		} elseif ( is_page() ) { // WordPress Pages
 			single_post_title( '' ); echo ' | '; bloginfo( 'name' );
 		} elseif ( is_search() ) { // Search results
