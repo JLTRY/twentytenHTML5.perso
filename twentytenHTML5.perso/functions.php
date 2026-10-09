@@ -17,7 +17,7 @@ function improved_trim_excerpt($text) {
 	if ( '' == $text ) {
 			$text = get_the_content('');
 			$text = apply_filters('the_content', $text);
-			$text = str_replace('\]\]\>', ']]&gt;', $text);
+			$text = str_replace('\]\]>', ']]&gt;', $text);
 	}
 	return  $text;
 }
@@ -40,7 +40,7 @@ function my_has_excerpt()
 function excerpt_read_more_link($output) {
 	if ( my_has_excerpt())
 		return improved_trim_excerpt('') . '<a class="suite-link" href="'.  get_permalink() . '">'  . 
-					  "Lire la suite" .'</a>';
+						  "Lire la suite" .'</a>';
 	else
 		return improved_trim_excerpt('');
 }
@@ -117,8 +117,10 @@ function twentytenHTML5perso_styles() {
 	$parent = wp_get_theme( $parent );
 	wp_register_style( 'joomla4', 'http://minify.jltryoen.fr/joomla4', array());
 	wp_register_style( 'twentytenHTML5.perso', get_stylesheet_uri() ,array('joomla4'));
+	wp_register_style( 'mobile-menu', get_stylesheet_directory_uri() . '/mobile-menu.css', array('joomla4'));
 	wp_enqueue_style('joomla4');
 	wp_enqueue_style( 'bootstrap' );
+	wp_enqueue_style( 'mobile-menu' );
     
     register_default_headers( array(
             'montagne' => array(

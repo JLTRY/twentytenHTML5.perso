@@ -6,6 +6,9 @@
 @media (max-width: 991.98px) {
 	#btn-toggler {
 		display: block !important;
+		position: relative;
+		top: 10px !important;
+		margin-bottom: 10px !important;
 	}
 
 	#navbarDesktopMenu {
