@@ -1,4 +1,18 @@
 /* WordPress Theme: Mobile offcanvas menu (Joomla/Cassiopeia style). */
+
+@media (min-width: 992px) {
+	.mobile-only {
+		display: none!important; 
+	}
+}
+
+@media (max-width: 991.98px) {
+	.pc-only { 
+		display: none!important; 
+	}
+}
+
+
 #navbarSupportedContent .mm-toggler {
 	display: none;
 }
@@ -151,6 +165,7 @@
 		display: block;
 		width: auto;
 		white-space: nowrap;
+		margin-top: 10px;
 	}
 
 	#navbarDesktopMenu > ul.menu.navbar-nav > li > a {

@@ -73,6 +73,13 @@ require_once('wp_bootstrap_navwalker.php');
 				<button class="navbar-toggler ml-auto collapsed" id="btn-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
+				<?php
+					if ( is_user_logged_in() ) {
+						echo '<a class="btn btn-light mobile-only" href="'.wp_logout_url(home_url()).'" title="Logout">Deconnexion</a>';
+					} else {
+						echo '<a class="btn btn-light mobile-only" href="' . wp_login_url(home_url()) . '">Connexion</a>';
+					}
+				?>
 			</div>
 			<div id="branding" role="banner">
 
@@ -97,12 +104,12 @@ require_once('wp_bootstrap_navwalker.php');
 						<ul class="nav menu btn">
 						<li class="item-695">
 						<?php
-							if ( is_user_logged_in() ) {
-									echo '<a class="btn btn-light" href="'.wp_logout_url(home_url()).'" title="Logout">Deconnexion</a>';
-								} else {
-									echo '<a class="btn btn-light" href="' . wp_login_url(home_url()) . '">Connexion</a>';
-							}
-						?>						
+                            if ( is_user_logged_in() ) {
+                                echo '<a class="btn btn-light pc-only" href="'.wp_logout_url(home_url()).'" title="Logout">Deconnexion</a>';
+                            } else {
+                                echo '<a class="btn btn-light pc-only" href="' . wp_login_url(home_url()) . '">Connexion</a>';
+                            }
+                        ?>
 						</li>
 						</ul>
 					</div>
